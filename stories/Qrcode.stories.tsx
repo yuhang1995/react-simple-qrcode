@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Image, Canvase } from '../src';
+import { Image, Canvas } from '../src';
 
 const meta: Meta = {
     title: 'Welcome',
@@ -36,10 +36,10 @@ export const Base = () => {
     )
 }
 
-export const CanvaseQrCode = () => {
+export const CanvasQrCode = () => {
     return (
         <div style={{ width: '500px', height: '500px', background: 'gray', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Canvase
+            <Canvas
                 text='https://github.com/yuhang1995/react-qrcode'
                 options={{
                     margin: 3,

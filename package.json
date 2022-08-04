@@ -10,6 +10,7 @@
         "dist",
         "src"
     ],
+    "sideEffects": false,
     "scripts": {
         "start": "tsdx watch",
         "build": "tsdx build",
@@ -37,11 +38,11 @@
     },
     "size-limit": [
         {
-            "path": "dist/react-qrcode.cjs.production.min.js",
+            "path": "dist/react-simple-qrcode.cjs.production.min.js",
             "limit": "10 KB"
         },
         {
-            "path": "dist/react-qrcode.esm.js",
+            "path": "dist/react-simple-qrcode.esm.js",
             "limit": "10 KB"
         }
     ],
@@ -57,11 +58,13 @@
         "@types/qrcode": "^1.4.2",
         "@types/react": "^18.0.15",
         "@types/react-dom": "^18.0.6",
+        "@types/react-test-renderer": "^18.0.0",
         "babel-loader": "^8.2.5",
         "husky": "^8.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-is": "^18.2.0",
+        "react-test-renderer": "^18.2.0",
         "size-limit": "^8.0.0",
         "tsdx": "^0.14.1",
         "tslib": "^2.4.0",

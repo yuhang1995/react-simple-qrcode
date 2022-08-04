@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base renders without crashing 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "background": "gray",
+      "display": "flex",
+      "height": "500px",
+      "justifyContent": "center",
+      "width": "500px",
+    }
+  }
+>
+  <img
+    src=""
+  />
+</div>
+`;
+
+exports[`Base renders without crashing 2`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "background": "gray",
+      "display": "flex",
+      "height": "500px",
+      "justifyContent": "center",
+      "width": "500px",
+    }
+  }
+>
+  <img
+    src=""
+  />
+</div>
+`;
