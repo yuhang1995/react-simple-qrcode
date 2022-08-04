@@ -1,8 +1,11 @@
 {
+    "name": "react-simple-qrcode",
+    "author": "yuhang",
     "version": "0.1.0",
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
+    "module": "dist/react-qrcode.esm.js",
     "files": [
         "dist",
         "src"
@@ -32,9 +35,6 @@
         "singleQuote": true,
         "trailingComma": "es5"
     },
-    "name": "react-qrcode",
-    "author": "yuhang",
-    "module": "dist/react-qrcode.esm.js",
     "size-limit": [
         {
             "path": "dist/react-qrcode.cjs.production.min.js",
@@ -69,5 +69,12 @@
     },
     "dependencies": {
         "qrcode": "^1.5.1"
-    }
+    },
+    "keywords": [
+        "react",
+        "component",
+        "qrcode",
+        "image",
+        "canvas"
+    ]
 }

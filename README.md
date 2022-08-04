@@ -1,181 +1,175 @@
-# TSDX React w/ Storybook User Guide
+# react-simple-qrcode
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+> Simple React QR code/ 2D barcode, Using [node.qrcode](https://github.com/soldair/node-qrcode) in React is easy, based on Qrcode encapsulation
 
-> This TSDX setup is meant for developing React component libraries (not apps!) that can be published to NPM. If you’re looking to build a React-based app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
+- [Install](#install)
+- [Usage](#usage)
 
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
+## Install
 
-## Commands
+Inside your project folder do:
 
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
-
-The recommended workflow is to run TSDX in one terminal:
-
-```bash
-npm start # or yarn start
+```shell
+npm install react-simple-qrcode
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+or
 
-Then run either Storybook or the example playground:
-
-### Storybook
-
-Run inside another terminal:
-
-```bash
-yarn storybook
+```shell
+yarn add react-simple-qrcode
 ```
 
-This loads the stories from `./stories`.
+## Usage
 
-> NOTE: Stories should reference the components as if using the library, similar to the example playground. This means importing from the root project directory. This has been aliased in the tsconfig and the storybook webpack config as a helper.
+`react-simple-qrcode` exports components that render `img` and `canvas`
 
-### Example
+### Image
 
-Then run the example inside another:
+```javascript
+import { Image } from 'react-simple-qrcode';
 
-```bash
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
+<ImageQrcode text="https://reactjs.org/" />;
 ```
 
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, we use [Parcel's aliasing](https://parceljs.org/module_resolution.html#aliases).
+#### Props
 
-To do a one-off build, use `npm run build` or `yarn build`.
+`text`
 
-To run tests, use `npm test` or `yarn test`.
+Type: `String|Array`
 
-## Configuration
+Text to encode or a list of objects describing segments.
 
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
+`options`
 
-### Jest
+- `type`
 
-Jest tests are set up to run with `npm test` or `yarn test`.
+  Type: `String`  
+   Default: `image/png`
 
-### Bundle analysis
+  Data URI format.
 
-Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.
+  Possible values are: `image/png`, `image/jpeg`, `image/webp`.
 
-#### Setup Files
+- `rendererOpts.quality`
 
-This is the folder structure we set up for you:
+  Type: `Number`
 
-```txt
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-/stories
-  Thing.stories.tsx # EDIT THIS
-/.storybook
-  main.js
-  preview.js
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
+  Default: 0.92
+
+  A Number between 0 and 1 indicating image quality if the requested type is image/jpeg or image/webp.
+
+See [Options](#options) for other settings.
+
+### Canvas
+
+```javascript
+import { CanvasQrcode } from 'react-simple-qrcode';
+
+<CanvasQrcode text="https://reactjs.org/" />;
 ```
 
-#### React Testing Library
+#### Props
 
-We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
+`text`
 
-### Rollup
+Type: `String|Array`
 
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
+Text to encode or a list of objects describing segments.
 
-### TypeScript
+`options`
 
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
+See [Options](#options).
 
-## Continuous Integration
+<br />
 
-### GitHub Actions
+### Options
 
-Two actions are added by default:
+#### QR Code options
 
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [size-limit](https://github.com/ai/size-limit)
+##### `version`
 
-## Optimizations
+Type: `Number`
 
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
+QR Code version. If not specified the more suitable value will be calculated.
 
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
+##### `errorCorrectionLevel`
 
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
-```
+Type: `String`
 
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
+Default: `M`
 
-## Module Formats
+Error correction level.
 
-CJS, ESModules, and UMD module formats are supported.
+Possible values are `low, medium, quartile, high` or `L, M, Q, H`.
 
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
+##### `maskPattern`
 
-## Deploying the Example Playground
+Type: `Number`
 
-The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
+Mask pattern used to mask the symbol.
 
-```bash
-cd example # if not already in the example folder
-npm run build # builds to dist
-netlify deploy # deploy the dist folder
-```
+Possible values are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`.
 
-Alternatively, if you already have a git repo connected, you can set up continuous deployment with Netlify:
+If not specified the more suitable value will be calculated.
 
-```bash
-netlify init
-# build command: yarn build && cd example && yarn && yarn build
-# directory to deploy: example/dist
-# pick yes for netlify.toml
-```
+##### `toSJISFunc`
 
-## Named Exports
+Type: `Function`
 
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
+Helper function used internally to convert a kanji to its Shift JIS value.
 
-## Including Styles
+Provide this function if you need support for Kanji mode.
 
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
+#### Renderers options
 
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
+##### `margin`
 
-## Publishing to NPM
+Type: `Number`
 
-We recommend using [np](https://github.com/sindresorhus/np).
+Default: `4`
 
-## Usage with Lerna
+Define how much wide the quiet zone should be.
 
-When creating a new package with TSDX within a project set up with Lerna, you might encounter a `Cannot resolve dependency` error when trying to run the `example` project. To fix that you will need to make changes to the `package.json` file _inside the `example` directory_.
+##### `scale`
 
-The problem is that due to the nature of how dependencies are installed in Lerna projects, the aliases in the example project's `package.json` might not point to the right place, as those dependencies might have been installed in the root of your Lerna project.
+Type: `Number`
 
-Change the `alias` to point to where those packages are actually installed. This depends on the directory structure of your Lerna project, so the actual path might be different from the diff below.
+Default: `4`
 
-```diff
-   "alias": {
--    "react": "../node_modules/react",
--    "react-dom": "../node_modules/react-dom"
-+    "react": "../../../node_modules/react",
-+    "react-dom": "../../../node_modules/react-dom"
-   },
-```
+Scale factor. A value of `1` means 1px per modules (black dots).
 
-An alternative to fixing this problem would be to remove aliases altogether and define the dependencies referenced as aliases as dev dependencies instead. [However, that might cause other problems.](https://github.com/palmerhq/tsdx/issues/64)
+##### `small`
+
+Type: `Boolean`
+
+Default: `false`
+
+Relevant only for terminal renderer. Outputs smaller QR code.
+
+##### `width`
+
+Type: `Number`
+
+Forces a specific width for the output image.
+
+If width is too small to contain the qr symbol, this option will be ignored.
+
+Takes precedence over `scale`.
+
+##### `color.dark`
+
+Type: `String`
+
+Default: `#000000ff`
+
+Color of dark module. Value must be in hex format (RGBA).
+
+Note: dark color should always be darker than `color.light`.
+
+##### `color.light`
+
+Type: `String`
+
+Default: `#ffffffff`
+
+Color of light module. Value must be in hex format (RGBA).
