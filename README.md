@@ -28,7 +28,7 @@ yarn add react-simple-qrcode
 ```javascript
 import { Image } from 'react-simple-qrcode';
 
-<ImageQrcode text="https://reactjs.org/" />;
+<Image text="https://reactjs.org/" />;
 ```
 
 #### Props
@@ -63,9 +63,9 @@ See [Options](#options) for other settings.
 ### Canvas
 
 ```javascript
-import { CanvasQrcode } from 'react-simple-qrcode';
+import { Canvas } from 'react-simple-qrcode';
 
-<CanvasQrcode text="https://reactjs.org/" />;
+<Canvas text="https://reactjs.org/" />;
 ```
 
 #### Props
