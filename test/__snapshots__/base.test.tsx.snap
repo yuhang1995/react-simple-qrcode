@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Canvas rendering renders Canvas variation ('H') correctly 1`] = `
+<canvas
+  option={
+    Object {
+      "errorCorrectionLevel": "H",
+    }
+  }
+/>
+`;
+
+exports[`Canvas rendering renders Canvas variation ('L') correctly 1`] = `
+<canvas
+  option={
+    Object {
+      "errorCorrectionLevel": "L",
+    }
+  }
+/>
+`;
+
+exports[`Canvas rendering renders Canvas variation ('M') correctly 1`] = `
+<canvas
+  option={
+    Object {
+      "errorCorrectionLevel": "M",
+    }
+  }
+/>
+`;
+
+exports[`Canvas rendering renders Canvas variation ({ text: '1234567890' }) correctly 1`] = `<canvas />`;
+
+exports[`Canvas rendering renders Canvas variation ({ text: 'double byte emoji 👌' }) correctly 1`] = `<canvas />`;
+
+exports[`Canvas rendering renders Canvas variation ({ text: 'four byte emoji 👌🏽' }) correctly 1`] = `<canvas />`;
+
+exports[`Canvas rendering renders Canvas variation ({ text: 'single byte emoji ✅' }) correctly 1`] = `<canvas />`;
+
+exports[`Canvas rendering renders Canvas variation ({ text: '你好' }) correctly 1`] = `<canvas />`;
+
+exports[`Canvas rendering renders basic Canvas correctly 1`] = `<canvas />`;
+
+exports[`Image rendering renders Image variation ('H') correctly 1`] = `
+<img
+  option={
+    Object {
+      "errorCorrectionLevel": "H",
+    }
+  }
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ('L') correctly 1`] = `
+<img
+  option={
+    Object {
+      "errorCorrectionLevel": "L",
+    }
+  }
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ('M') correctly 1`] = `
+<img
+  option={
+    Object {
+      "errorCorrectionLevel": "M",
+    }
+  }
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: '1234567890' }) correctly 1`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: '1234567890' }) correctly 2`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: 'double byte emoji 👌' }) correctly 1`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: 'double byte emoji 👌' }) correctly 2`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: 'four byte emoji 👌🏽' }) correctly 1`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: 'four byte emoji 👌🏽' }) correctly 2`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: 'single byte emoji ✅' }) correctly 1`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: 'single byte emoji ✅' }) correctly 2`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: '你好' }) correctly 1`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders Image variation ({ text: '你好' }) correctly 2`] = `
+<img
+  src=""
+/>
+`;
+
+exports[`Image rendering renders basic Image correctly 1`] = `
+<img
+  src=""
+/>
+`;

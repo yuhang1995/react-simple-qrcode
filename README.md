@@ -2,8 +2,8 @@
 
 > Simple React QR code/ 2D barcode, Using [node.qrcode](https://github.com/soldair/node-qrcode) in React is easy, based on Qrcode encapsulation
 
-- [Install](#install)
-- [Usage](#usage)
+-   [Install](#install)
+-   [Usage](#usage)
 
 ## Install
 
@@ -41,22 +41,22 @@ Text to encode or a list of objects describing segments.
 
 `options`
 
-- `type`
+-   `type`
 
-  Type: `String`  
-   Default: `image/png`
+    Type: `String`  
+     Default: `image/png`
 
-  Data URI format.
+    Data URI format.
 
-  Possible values are: `image/png`, `image/jpeg`, `image/webp`.
+    Possible values are: `image/png`, `image/jpeg`, `image/webp`.
 
-- `rendererOpts.quality`
+-   `rendererOpts.quality`
 
-  Type: `Number`
+    Type: `Number`
 
-  Default: 0.92
+    Default: 0.92
 
-  A Number between 0 and 1 indicating image quality if the requested type is image/jpeg or image/webp.
+    A Number between 0 and 1 indicating image quality if the requested type is image/jpeg or image/webp.
 
 See [Options](#options) for other settings.
 

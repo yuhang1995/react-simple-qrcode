@@ -20,33 +20,80 @@ const meta: Meta = {
 export default meta;
 
 export const Base = () => {
-
     return (
-        <div style={{ width: '500px', height: '500px', background: 'gray', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Image
-                text='https://github.com/yuhang1995/react-qrcode'
-                options={{
-                    type: 'image/jpeg',
-                    margin: 3,
-                    scale: 4,
-                    width: 200,
+        <>
+            <div
+                style={{
+                    width: '250px',
+                    height: '250px',
+                    background: 'gray',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
-            />
-        </div>
-    )
-}
+            >
+                <Image text="https://github.com/yuhang1995/react-qrcode" />
+            </div>
+            <br />
+            <div
+                style={{
+                    width: '250px',
+                    height: '250px',
+                    background: 'gray',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <Image
+                    text="https://github.com/yuhang1995/react-qrcode"
+                    options={{
+                        type: 'image/png',
+                        margin: 3,
+                        scale: 4,
+                        width: 200,
+                    }}
+                />
+            </div>
+        </>
+    );
+};
 
 export const CanvasQrCode = () => {
     return (
-        <div style={{ width: '500px', height: '500px', background: 'gray', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Canvas
-                text='https://github.com/yuhang1995/react-qrcode'
-                options={{
-                    margin: 3,
-                    scale: 4,
-                    width: 200,
+        <>
+            <div
+                style={{
+                    width: '250px',
+                    height: '250px',
+                    background: 'gray',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
-            />
-        </div>
-    )
-}
+            >
+                <Canvas text="https://github.com/yuhang1995/react-qrcode" />
+            </div>
+            <br />
+            <div
+                style={{
+                    width: '250px',
+                    height: '250px',
+                    background: 'gray',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <Canvas
+                    text="https://github.com/yuhang1995/react-qrcode"
+                    options={{
+                        margin: 3,
+                        scale: 4,
+                        width: 200,
+                    }}
+                />
+            </div>
+        </>
+    );
+};
